@@ -13,7 +13,7 @@
 const fetchUsers = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await response.json();
-    return data.map(user => {
+    const users = data.map(user => {
         return {
             id: user.id,
             name: user.name,
@@ -38,6 +38,19 @@ const fetchUsers = async () => {
             }
         }
     });
-}
+    const createDiv = document.createElement('div');
 
-fetchUsers().then(data => console.log(data));
+    users.forEach(user => {
+        return createDiv.innerHTML += `<div>
+            <h2>${user.name}</h2>
+            <p><strong>Username:</strong> ${user.username}</p>
+            <p><strong>Email:</strong> ${user.email}</p>
+            <p><strong>Address:</strong> ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}</p>
+            <p><strong>Phone:</strong> ${user.phone}</p>
+            <p><strong>Website:</strong> ${user.website}</p>
+            <p><strong>Company:</strong> ${user.company.name}, ${user.company.catchPhrase}, ${user.company.bs}</p>
+            <hr>
+        </div>`;
+    })
+    document.body.appendChild(createDiv);
+}

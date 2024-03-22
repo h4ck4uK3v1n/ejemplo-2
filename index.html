@@ -1,3 +1,62 @@
-<h1>
-  html desde el repositorio remoto
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root{
+      --primary-color: #333;
+      --secondary-color: #555;
+      --light-color: #f4f4f4;
+      --dark-color: #333;
+      color-scheme: light dark;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: var(--dark-color);
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .user {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .user img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .user h3 {
+      margin: 0;
+    }
+    .user button {
+      padding: 5px 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .user button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body onload="fetchUsers()">
+  
+  <script src="/index.js"></script>
+</body>
+</html>
